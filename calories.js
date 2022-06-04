@@ -35,55 +35,55 @@ ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 
 // EVENT LISTENERS
-outcomeBtn.addEventListener("click", function(){
+outcomeBtn.addEventListener("click", function () {
     show(outcomeEl);
-    hide( [incomeEl, allEl] );
-    active( outcomeBtn );
-    inactive( [incomeBtn, allBtn] );
+    hide([incomeEl, allEl]);
+    active(outcomeBtn);
+    inactive([incomeBtn, allBtn]);
 })
-incomeBtn.addEventListener("click", function(){
+incomeBtn.addEventListener("click", function () {
     show(incomeEl);
-    hide( [outcomeEl, allEl] );
-    active( incomeBtn );
-    inactive( [outcomeBtn, allBtn] );
+    hide([outcomeEl, allEl]);
+    active(incomeBtn);
+    inactive([outcomeBtn, allBtn]);
 })
-allBtn.addEventListener("click", function(){
+allBtn.addEventListener("click", function () {
     show(allEl);
-    hide( [incomeEl, outcomeEl] );
-    active( allBtn );
-    inactive( [incomeBtn, outcomeBtn] );
+    hide([incomeEl, outcomeEl]);
+    active(allBtn);
+    inactive([incomeBtn, outcomeBtn]);
 })
 
-addExpense.addEventListener("click", function(){
+addExpense.addEventListener("click", function () {
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
-    if(!outcomeTitle.value || !outcomeAmount.value ) return;
+    if (!outcomeTitle.value || !outcomeAmount.value) return;
 
     // SAVE THE ENTRY TO ENTRY_LIST
     let outcome = {
-        type : "outcome",
-        title : outcomeTitle.value,
-        amount : parseInt(outcomeAmount.value)
+        type: "outcome",
+        title: outcomeTitle.value,
+        amount: parseInt(outcomeAmount.value)
     }
     ENTRY_LIST.push(outcome);
 
     updateUI();
-    clearInput( [outcomeTitle, outcomeAmount] )
+    clearInput([outcomeTitle, outcomeAmount])
 })
 
-addIncome.addEventListener("click", function(){
+addIncome.addEventListener("click", function () {
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
-    if(!incomeTitle.value || !incomeAmount.value ) return;
+    if (!incomeTitle.value || !incomeAmount.value) return;
 
     // SAVE THE ENTRY TO ENTRY_LIST
     let income = {
-        type : "income",
-        title : incomeTitle.value,
-        amount : parseInt(incomeAmount.value)
+        type: "income",
+        title: incomeTitle.value,
+        amount: parseInt(incomeAmount.value)
     }
     ENTRY_LIST.push(income);
 
     updateUI();
-    clearInput( [incomeTitle, incomeAmount] )
+    clearInput([incomeTitle, incomeAmount])
 })
 
 incomeList.addEventListener("click", deleteOrEdit);
@@ -92,32 +92,32 @@ allList.addEventListener("click", deleteOrEdit);
 
 // HELPERS
 
-function deleteOrEdit(event){
+function deleteOrEdit(event) {
     const targetBtn = event.target;
 
     const entry = targetBtn.parentNode;
 
-    if( targetBtn.id == DELETE ){
+    if (targetBtn.id == DELETE) {
         deleteEntry(entry);
-    }else if(targetBtn.id == EDIT ){
+    } else if (targetBtn.id == EDIT) {
         editEntry(entry);
     }
 }
 
-function deleteEntry(entry){
-    ENTRY_LIST.splice( entry.id, 1);
+function deleteEntry(entry) {
+    ENTRY_LIST.splice(entry.id, 1);
 
     updateUI();
 }
 
-function editEntry(entry){
+function editEntry(entry) {
     console.log(entry)
     let ENTRY = ENTRY_LIST[entry.id];
 
-    if(ENTRY.type == "income"){
+    if (ENTRY.type == "income") {
         incomeAmount.value = ENTRY.amount;
         incomeTitle.value = ENTRY.title;
-    }else if(ENTRY.type == "outcome"){
+    } else if (ENTRY.type == "outcome") {
         outcomeAmount.value = ENTRY.amount;
         outcomeTitle.value = ENTRY.title;
     }
@@ -125,7 +125,7 @@ function editEntry(entry){
     deleteEntry(entry);
 }
 
-function updateUI(){
+function updateUI() {
     income = calculateTotal("income", ENTRY_LIST);
     outcome = calculateTotal("outcome", ENTRY_LIST);
     total = calculateBalance(income, outcome);
@@ -135,12 +135,12 @@ function updateUI(){
     outcomeTotalEl.innerHTML = `${outcome}`;
     incomeTotalEl.innerHTML = `${income}`;
 
-    clearElement( [outcomeList, incomeList, allList] );
+    clearElement([outcomeList, incomeList, allList]);
 
-    ENTRY_LIST.forEach( (entry, index) => {
-        if( entry.type == "outcome" ){
+    ENTRY_LIST.forEach((entry, index) => {
+        if (entry.type == "outcome") {
             showEntry(outcomeList, entry.type, entry.title, entry.amount, index)
-        }else if( entry.type == "income" ){
+        } else if (entry.type == "income") {
             showEntry(incomeList, entry.type, entry.title, entry.amount, index)
         }
         showEntry(allList, entry.type, entry.title, entry.amount, index)
@@ -151,7 +151,7 @@ function updateUI(){
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
-function showEntry(list, type, title, amount, id){
+function showEntry(list, type, title, amount, id) {
 
     const entry = ` <li id = "${id}" class="${type}">
                         <div class="entry">${title}: ${amount}</div>
@@ -164,17 +164,17 @@ function showEntry(list, type, title, amount, id){
     list.insertAdjacentHTML(position, entry);
 }
 
-function clearElement(elements){
-    elements.forEach( element => {
+function clearElement(elements) {
+    elements.forEach(element => {
         element.innerHTML = "";
     })
 }
 
-function calculateTotal(type, list){
+function calculateTotal(type, list) {
     let sum = 0;
 
-    list.forEach( entry => {
-        if( entry.type == type ){
+    list.forEach(entry => {
+        if (entry.type == type) {
             sum += entry.amount;
         }
     })
@@ -182,31 +182,31 @@ function calculateTotal(type, list){
     return sum;
 }
 
-function calculateBalance(income, outcome){
+function calculateBalance(income, outcome) {
     return income - outcome;
 }
 
-function clearInput(inputs){
-    inputs.forEach( input => {
+function clearInput(inputs) {
+    inputs.forEach(input => {
         input.value = "";
     })
 }
-function show(element){
+function show(element) {
     element.classList.remove("hide");
 }
 
-function hide( elements ){
-    elements.forEach( element => {
+function hide(elements) {
+    elements.forEach(element => {
         element.classList.add("hide");
     })
 }
 
-function active(element){
+function active(element) {
     element.classList.add("active");
 }
 
-function inactive( elements ){
-    elements.forEach( element => {
+function inactive(elements) {
+    elements.forEach(element => {
         element.classList.remove("active");
     })
 }

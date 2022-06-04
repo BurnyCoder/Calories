@@ -4,6 +4,7 @@
     font-weight: bold;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Gilroy Bold';
     src: url('font/Gilroy-Bold.woff') format('woff');
@@ -11,16 +12,16 @@
     font-style: normal;
 }
 
-body{
+body {
     background-color: #222;
     font-family: 'Gilroy';
 }
 
-*{
+* {
     font-family: 'Gilroy';
     list-style: none;
     text-decoration: none;
-    -webkit-user-select: none;      
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -28,17 +29,18 @@ body{
 
 /* REMOVE SPINNERS FROM NUMBER INPUT */
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
-.calories-container{
+.calories-container {
     position: absolute;
     width: 360px;
     height: 780px;
@@ -48,76 +50,79 @@ input[type=number] {
     background-color: #0a3300;
 }
 
-.calories-container .app-title{
+.calories-container .app-title {
     margin-top: 70px;
     margin-left: 20px;
 }
 
-.calories-container .app-title a{
+.calories-container .app-title a {
     color: #FFF;
 }
-.calories-container .app-title a b{
+
+.calories-container .app-title a b {
     font-family: 'Gilroy Bold';
 }
 
-.calories-header{
+.calories-header {}
 
-}
-
-.calories-header .total{
+.calories-header .total {
     margin-top: 45px;
     margin-left: 20px;
 }
 
-.calories-header .total .title{
+.calories-header .total .title {
     color: #FFF;
     font-size: 1em;
     font-family: 'Gilroy Bold';
 }
 
-.calories-header .total .value{
+.calories-header .total .value {
     color: #FFF;
     font-size: 2em;
     margin-top: 10px;
     font-family: 'Gilroy Bold';
 }
 
-.calories-header .profile{
+.calories-header .profile {
     display: block;
     width: 310px;
     margin: 35px auto 0;
     line-height: 1.7em;
     text-align: center;
-    
+
 }
 
-.calories-header .profile .income, .chart, .out{
+.calories-header .profile .income,
+.chart,
+.out {
     height: 50px;
     display: inline-block;
     width: 100px;
     vertical-align: middle;
 }
 
-.calories-header .profile .income .title{
+.calories-header .profile .income .title {
     color: #FFF;
     opacity: 0.5;
 }
-.calories-header .profile .income .income-total{
+
+.calories-header .profile .income .income-total {
     color: #FFF;
     font-family: 'Gilroy Bold';
 }
 
-.calories-header .profile .out .title{
+.calories-header .profile .out .title {
     color: #FFF;
     opacity: 0.5;
 }
-.calories-header .profile .out .outcome-total{
+
+.calories-header .profile .out .outcome-total {
     color: #25a000;
     font-family: 'Gilroy Bold';
 }
 
 /*/////////////   DASHBOARD    /////////////*/
-.calories-dashboard{
+.calories-dashboard {
     display: block;
     width: 360px;
     height: 470px;
@@ -126,7 +131,7 @@ input[type=number] {
     border-radius: 30px 30px 0 0;
 }
 
-.calories-dashboard .dash-title{
+.calories-dashboard .dash-title {
     display: inline-block;
     color: #1a0034;
     font-size: 1.7em;
@@ -135,13 +140,15 @@ input[type=number] {
     font-family: 'Gilroy Bold';
 }
 
-.toggle{
+.toggle {
     display: block;
     margin-top: 30px;
     margin-left: 20px;
 }
 
-.toggle .tab1, .tab2, .tab3{
+.toggle .tab1,
+.tab2,
+.tab3 {
     display: inline-block;
     cursor: pointer;
     font-size: 1.1em;
@@ -150,69 +157,72 @@ input[type=number] {
     opacity: 0.4;
 }
 
-.toggle .tab2, .tab3{
+.toggle .tab2,
+.tab3 {
     margin-left: 10px;
 }
 
-.active{
-    opacity : 1 !important;
+.active {
+    opacity: 1 !important;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.calories-dashboard input{
+.calories-dashboard input {
     /* MAKE INPUT SELECTABLE */
-    -webkit-user-select: auto;      
+    -webkit-user-select: auto;
     -moz-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
 }
 
 /* ////////// ALL ///////////// */
-.calories-dashboard #all{
+.calories-dashboard #all {
     width: 360px;
     height: 339px;
     position: relative;
 }
-.calories-dashboard #all ul{
+
+.calories-dashboard #all ul {
     width: 360px;
     height: 285px;
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top:20px;
+    margin-top: 20px;
     overflow-x: auto;
 }
 
-.calories-dashboard #all ul.list li{
+.calories-dashboard #all ul.list li {
     position: relative;
     font-size: 1em;
 }
 
-.calories-dashboard #all ul.list li *{
+.calories-dashboard #all ul.list li * {
     display: inline-block;
     height: 30px;
     vertical-align: middle;
 }
 
-.calories-dashboard #all ul.list li .entry{
-    width:250px;
+.calories-dashboard #all ul.list li .entry {
+    width: 250px;
     height: auto;
     padding-left: 20px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    ;
     word-wrap: break-word;
     font-family: 'Gilroy Bold';
 }
 
-.calories-dashboard #all ul.list li #edit{
+.calories-dashboard #all ul.list li #edit {
     visibility: hidden;
 }
 
-.calories-dashboard #all ul.list li #delete{
+.calories-dashboard #all ul.list li #delete {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     right: 20px;
     cursor: pointer;
@@ -221,21 +231,20 @@ input[type=number] {
     background-repeat: no-repeat;
 }
 
-.calories-dashboard #all ul.list li.income{
+.calories-dashboard #all ul.list li.income {}
 
-}
-.calories-dashboard #all ul.list li.outcome{
+.calories-dashboard #all ul.list li.outcome {
     color: #25a000;
 }
 
 /* //////// EXPENSE ////////// */
-.calories-dashboard #outcome{
+.calories-dashboard #outcome {
     width: 360px;
     height: 339px;
     position: relative;
 }
 
-.calories-dashboard #outcome .input{
+.calories-dashboard #outcome .input {
     position: absolute;
     display: block;
     width: 360px;
@@ -243,14 +252,14 @@ input[type=number] {
     border-top: 1px solid #ccc;
 }
 
-.calories-dashboard #outcome .input *{
+.calories-dashboard #outcome .input * {
     display: inline-block;
     vertical-align: middle;
 }
 
-.calories-dashboard #outcome .input input#outcome-title-input{
+.calories-dashboard #outcome .input input#outcome-title-input {
     height: 40px;
-    width : 150px;
+    width: 150px;
     padding-left: 10px;
     font-size: 1.2em;
     font-family: 'Gilroy';
@@ -260,9 +269,9 @@ input[type=number] {
     border: none;
 }
 
-.calories-dashboard #outcome .input input#outcome-amount-input{
+.calories-dashboard #outcome .input input#outcome-amount-input {
     height: 40px;
-    width : 110px;
+    width: 110px;
     padding-left: 10px;
     font-size: 1.2em;
     font-family: 'Gilroy';
@@ -272,46 +281,47 @@ input[type=number] {
     border: none;
 }
 
-.calories-dashboard #outcome .input .add-outcome img{
+.calories-dashboard #outcome .input .add-outcome img {
     width: 40px;
     height: 40px;
     cursor: pointer;
 }
 
-.calories-dashboard #outcome ul{
+.calories-dashboard #outcome ul {
     width: 360px;
     height: 285px;
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top:20px;
+    margin-top: 20px;
     overflow-x: auto;
 }
 
-.calories-dashboard #outcome ul.list li{
+.calories-dashboard #outcome ul.list li {
     position: relative;
     font-size: 1em;
 }
 
-.calories-dashboard #outcome ul.list li *{
+.calories-dashboard #outcome ul.list li * {
     display: inline-block;
     height: 30px;
     vertical-align: middle;
 }
 
-.calories-dashboard #outcome ul.list li .entry{
-    width:250px;
+.calories-dashboard #outcome ul.list li .entry {
+    width: 250px;
     height: auto;
     padding-left: 20px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    ;
     word-wrap: break-word;
     font-family: 'Gilroy Bold';
     color: #25a000;
 }
 
-.calories-dashboard #outcome ul.list li #edit{
+.calories-dashboard #outcome ul.list li #edit {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     right: 50px;
     cursor: pointer;
@@ -320,9 +330,9 @@ input[type=number] {
     background-repeat: no-repeat;
 }
 
-.calories-dashboard #outcome ul.list li #delete{
+.calories-dashboard #outcome ul.list li #delete {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     right: 20px;
     cursor: pointer;
@@ -332,13 +342,13 @@ input[type=number] {
 }
 
 /* /////// INCOME //////// */
-.calories-dashboard #income{
+.calories-dashboard #income {
     width: 360px;
     height: 339px;
     position: relative;
 }
 
-.calories-dashboard #income .input{
+.calories-dashboard #income .input {
     position: absolute;
     display: block;
     width: 360px;
@@ -346,14 +356,14 @@ input[type=number] {
     border-top: 1px solid #ccc;
 }
 
-.calories-dashboard #income .input *{
+.calories-dashboard #income .input * {
     display: inline-block;
     vertical-align: middle;
 }
 
-.calories-dashboard #income .input input#income-title-input{
+.calories-dashboard #income .input input#income-title-input {
     height: 40px;
-    width : 150px;
+    width: 150px;
     padding-left: 10px;
     font-size: 1.2em;
     font-family: 'Gilroy';
@@ -363,9 +373,9 @@ input[type=number] {
     border: none;
 }
 
-.calories-dashboard #income .input input#income-amount-input{
+.calories-dashboard #income .input input#income-amount-input {
     height: 40px;
-    width : 110px;
+    width: 110px;
     padding-left: 10px;
     font-size: 1.2em;
     font-family: 'Gilroy';
@@ -375,45 +385,46 @@ input[type=number] {
     border: none;
 }
 
-.calories-dashboard #income .input .add-income img{
+.calories-dashboard #income .input .add-income img {
     width: 40px;
     height: 40px;
     cursor: pointer;
 }
 
-.calories-dashboard #income ul{
+.calories-dashboard #income ul {
     width: 360px;
     height: 285px;
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top:20px;
+    margin-top: 20px;
     overflow-x: auto;
 }
 
-.calories-dashboard #income ul.list li{
+.calories-dashboard #income ul.list li {
     position: relative;
     font-size: 1em;
 }
 
-.calories-dashboard #income ul.list li *{
+.calories-dashboard #income ul.list li * {
     display: inline-block;
     height: 30px;
     vertical-align: middle;
 }
 
-.calories-dashboard #income ul.list li .entry{
-    width:250px;
+.calories-dashboard #income ul.list li .entry {
+    width: 250px;
     height: auto;
     padding-left: 20px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    ;
     word-wrap: break-word;
     font-family: 'Gilroy Bold';
 }
 
-.calories-dashboard #income ul.list li #edit{
+.calories-dashboard #income ul.list li #edit {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     right: 50px;
     cursor: pointer;
@@ -422,9 +433,9 @@ input[type=number] {
     background-repeat: no-repeat;
 }
 
-.calories-dashboard #income ul.list li #delete{
+.calories-dashboard #income ul.list li #delete {
     position: absolute;
-    width:20px;
+    width: 20px;
     height: 20px;
     right: 20px;
     cursor: pointer;

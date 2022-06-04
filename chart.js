@@ -18,18 +18,18 @@ ctx.lineWidth = 8;
 // CIRCLE RADIUS
 const R = 20;
 
-function drawCircle(color, ratio, anticlockwise){
+function drawCircle(color, ratio, anticlockwise) {
 
     ctx.strokeStyle = color;
     ctx.beginPath();
-    ctx.arc( canvas.width/2, canvas.height/2, R, 0, ratio * 2 * Math.PI, anticlockwise);
+    ctx.arc(canvas.width / 2, canvas.height / 2, R, 0, ratio * 2 * Math.PI, anticlockwise);
     ctx.stroke();
 }
 
-function updateChart( income, outcome){
+function updateChart(income, outcome) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    let ratio = income / (income+outcome);
+    let ratio = income / (income + outcome);
 
     drawCircle("#FFFFFF", - ratio, true);
     drawCircle("#25a000", 1 - ratio, false);

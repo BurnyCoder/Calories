@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories counter app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calories-container">
+        <div class="app-title">
+            <a href=""><b>Calories counter</b></a>
+        </div>
+        <div class="calories-header">
+            <div class="total">
+                <div class="title">
+                    Total
+                </div>
+                <div class="value">
+                    0
+                </div>
+            </div>
+            <div class="profile">
+                <div class="income">
+                    <div class="title">
+                        Income
+                    </div>
+                    <div class="income-total">
+                        0
+                    </div>
+                </div>
+                <div class="chart"></div>
+                <div class="out">
+                    <div class="title">
+                        Outcome
+                    </div>
+                    <div class="outcome-total">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calories-dashboard">
+            <div class="dash-title">Dashboard</div>
+            <div class="toggle">
+                <div class="tab1">Outcome</div>
+                <div class="tab2">Income</div>
+                <div class="tab3 active">All</div>
+            </div>
+            <div class="hide" id="income">
+                <ul class="list"></ul>
+                <div class="input">
+                    <input type="text" id="income-title-input" name="title" placeholder="Title">
+                    <input type="number" id="income-amount-input" name="amount" placeholder="0">
+                    <div class="add-income"><img src="icon/plus.png" alt=""></div>
+                </div>
+            </div>
+            <div class="hide" id="outcome">
+                <ul class="list"></ul>
+                <div class="input">
+                    <input type="text" id="outcome-title-input" name="title" placeholder="Title">
+                    <input type="number" id="outcome-amount-input" name="amount" placeholder="0">
+                    <div class="add-outcome"><img src="icon/plus.png" alt=""></div>
+                </div>
+            </div>
+            <div id="all">
+                <ul class="list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="chart.js"></script>
+    <script src="calories.js"></script>
+</body>
+</html>

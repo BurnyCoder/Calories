@@ -1,5 +1,3 @@
-/* www.youtube.com/CodeExplained */
-
 // SELECT ELEMENTS
 const totalEl = document.querySelector(".total .value");
 const incomeTotalEl = document.querySelector(".income-total");
